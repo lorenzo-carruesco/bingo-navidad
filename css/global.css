@@ -1,5 +1,63 @@
-body {height: 100%; width: 100%; margin: 0; overflow: hidden;}
+body {height: 100%; width: 100%; margin: 0; overflow: hidden; font-family: sans-serif; color: #333;  font-size: 5.5vmin; background-color: lightgrey; }
 div#container {height: 100%; width: 100%; float: left; position: relative; }
-div#number-panel { width: 100%; float: left; position: relative; background-color: lightgrey;  max-height: 70%}
-div#number-panel div {float: left; color: black; width: 10%; height: 7.5%; text-align: center}
+div#number-panel { width: 100%; float: left; position: relative;   max-height: 70%}
+div#number-panel div {float: left; color: black; width: 10%; height: 7.7%; text-align: center}
 div#number-panel div img {max-width: 100%; max-height: 100%;}
+div#number-panel div span {text-shadow: 0 1px 2px #ddd,0 -1px 2px #000;}
+div#number-panel div span.glowed {color: #9cf; text-shadow: 0 1px 2px #666,0 -1px 2px #999, 0 0 2px #9cf, 0 0 5px #9cf, 0 0 10px #9cf, 0 0 20px #9cf; }
+
+div#base {float:left; width: 100%; background-color: #6AF; border-color: #37C; border-radius: 2vmin 2vmin 0 0; position: relative; height: 30%;}
+div#base #bombo {float:left; height: 100%; max-width: 30%;}
+div#base #bombo img{max-height: 100%; max-width: 100%}
+div#base #ball-output {float:left; height: 50%; padding: 5% 0; width: 40%; text-align: center; }
+div#base #ball-output div {display: inline-block}
+
+
+div#base #controls {float:right; height: 100%; width: 30%;}
+div#base #controls a {float:right; clear: both; text-align: center;  max-width: 100%;  display: inline-block; margin: 1vh; border-width: 0.5vh;}
+div#base #controls #new-ball {font-size: 8vmin; padding: 2vmin 4vmin;}
+div#base #controls #new-game {font-size: 5vmin; padding: 1vmin 2vmin;}
+
+.ball:before{
+	content: "";
+	display: block;
+	padding-top: 0.5em;
+}
+.ball:after{
+	content: "";
+	display: block;
+	padding-bottom: 0.5em;
+}
+.ball { 
+    position: relative; border-radius: 50%;  
+    text-align: center; display: inline-block; width: 2em;
+    background:linear-gradient(to bottom, #FFFFFF 5%, #378de5 150%);
+    box-shadow:0 0.1vmin 0.2vmin 0.0vmin #3F689B;
+    margin: 0.1vmin 0.2vmin 0.3vmin;
+}
+.button {
+    -moz-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+    box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+    background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+    background-color:#79bbff;
+    border-radius:2vmin;
+    border:1px solid #84bbf3;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:1vmin 2vmin;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #528ecc;
+}
+.button:hover {
+    background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+    background-color:#378de5;
+}
+.button:active {
+    position:relative;
+    top:1px;
+}
