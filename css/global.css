@@ -3,13 +3,13 @@ div#container {height: 100%; width: 100%; float: left; position: relative; }
 div#number-panel { width: 100%; float: left; position: relative;   max-height: 70%}
 div#number-panel div {float: left; color: black; width: 10%; height: 7.7%; text-align: center}
 div#number-panel div img {max-width: 100%; max-height: 100%;}
-div#number-panel div span {text-shadow: 0 1px 2px #ddd,0 -1px 2px #000;}
-div#number-panel div span.glowed {color: #9cf; text-shadow: 0 1px 2px #666,0 -1px 2px #999, 0 0 2px #9cf, 0 0 5px #9cf, 0 0 10px #9cf, 0 0 20px #9cf; }
+div#number-panel div span {text-shadow: 0 1px 2px #ddd,0 -1px 2px #000; transition: border 1s linear, box-shadow 1s linear;}
+div#number-panel div span.glowed {color: #069; text-shadow: 0 1px 2px #666,0 -1px 2px #999, 0 0 2px #9cf, 0 0 5px #9cf, 0 0 10px #9cf, 0 0 20px #9cf; }
 
 div#base {float:left; width: 100%; background-color: #6AF; border-color: #37C; border-radius: 2vmin 2vmin 0 0; position: relative; height: 30%;}
 div#base #bombo {float:left; height: 100%; max-width: 30%;}
 div#base #bombo img{max-height: 100%; max-width: 100%}
-div#base #ball-output {float:left; height: 50%; padding: 5% 0; width: 40%; text-align: center; }
+div#base #ball-output {float:left; height: 50%; padding: 2.5% 0; width: 40%; text-align: center; font-size: 9vmin }
 div#base #ball-output div {display: inline-block}
 
 
@@ -31,7 +31,7 @@ div#base #controls #new-game {font-size: 5vmin; padding: 1vmin 2vmin;}
 .ball { 
     position: relative; border-radius: 50%;  
     text-align: center; display: inline-block; width: 2em;
-    background:linear-gradient(to bottom, #FFFFFF 5%, #378de5 150%);
+    background:linear-gradient(to bottom, #FFFFFF 5% , #ddddf5 80%, #378de5 150%);
     box-shadow:0 0.1vmin 0.2vmin 0.0vmin #3F689B;
     margin: 0.1vmin 0.2vmin 0.3vmin;
 }
