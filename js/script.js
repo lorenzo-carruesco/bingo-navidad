@@ -14,14 +14,27 @@ var bingo = {
     getNewNumber: function () {
         let index = Math.floor(Math.random() * bingo.remaining_numbers.length);
         bingo.last_number = bingo.remaining_numbers[index];
-        bingo.remaining_numbers.filter(item => item !== bingo.last_number);
+        bingo.remaining_numbers = bingo.remaining_numbers.filter(item => item !== bingo.last_number);
     },
     newBallClick: function (e) {
         e.preventDefault();
         bingo.getNewNumber();
         bingo.printLastNumber();
     },
-    printLastNumber: function () {
+    printLastNumber: function() {
+        $("#ball-output .output-position--1").text(bingo.last_number);
+        $("#ball-output .ball").each(function () {
+            let position = $(this).attr("position");
+            $(this).removeClass("output-position-"+position);
+            position++;
+            $(this).addClass("output-position-"+position);
+            $(this).attr("position",position);
+        });
+        $("#ball-output").prepend('<div class="ball output-position--1" position="-1" > &nbsp; </div>');
+        $("#ball-output .output-position-4").remove();
+        $(".number#number-" + bingo.last_number).addClass('glowed');
+    },
+    printLastNumberOld: function () {
         $("#ball-output .ball").fadeOut(300, function () {
             $("#ball-output").html('<div class="ball" style="display:none">' + bingo.last_number + '</div>');
             $("#ball-output .ball").fadeIn(300, function () {
@@ -30,11 +43,12 @@ var bingo = {
         });
     },
     init: function () {
-
         document.getElementById('new-ball').addEventListener("click", bingo.newBallClick, false);
         $("#new-game").click(function (e) {
             return confirm("Nueva Partida");
         });
+        //Elimina publicidad del host
+        $("body>div:not(#container)").remove()
     }
 };
 document.addEventListener("DOMContentLoaded", function () {

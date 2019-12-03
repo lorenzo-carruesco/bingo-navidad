@@ -34,6 +34,7 @@ div#number-panel {
         float: initial;
         min-height: 59%;
         margin: auto;
+        border-radius: 15px;
     }
 
 }
@@ -65,11 +66,13 @@ div#number-panel div span {
     padding: 2.5%;
     text-shadow: 0 1px 2px #ddd, 0 -1px 2px #000;
     transition: border 1s linear, box-shadow 1s linear;
+    line-height: 1em;
 }
 
 div#number-panel div span.glowed {
     color: #069;
     text-shadow: 0 1px 2px #666, 0 -1px 2px #999, 0 0 2px #9cf, 0 0 5px #9cf, 0 0 10px #9cf, 0 0 20px #9cf;
+    border-color: inherit;
 }
 
 div#base {
@@ -85,7 +88,10 @@ div#base {
 div#base #bombo {
     float: left;
     height: 100%;
-    max-width: 30%;
+    max-width: 20%;
+    position: absolute;
+    left: 0;
+    background: inherit;
 }
 
 div#base #bombo img {
@@ -95,15 +101,63 @@ div#base #bombo img {
 
 div#base #ball-output {
     float: left;
-    height: 50%;
-    padding: 2.5% 0;
-    width: 40%;
+    min-height: 50%;
+    padding-bottom: 0.5em;
+    width: 100%;
     text-align: center;
-    font-size: 9vmin
+    font-size: 9vmin;
+    margin: 0.5em 0;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    z-index: 10;
 }
 
 div#base #ball-output div {
-    display: inline-block
+    display: inline-block;
+    transition: margin 1s, font-size 1s, color 1s, width 1s, height 1s;
+
+}
+div#base #ball-output  .output-position--1:after, div#base #ball-output .output-position--1:before {
+    transition: padding 1s;
+
+}
+
+div#base #ball-output .output-position--1 {
+    font-size: 25%;
+    z-index: 11;
+    color: #ccc;
+    margin: 4em -1em 0 0;
+    visibility: hidden;
+}
+
+div#base #ball-output .output-position-0 {
+    font-size: 100%;
+    z-index: 10;
+}
+
+div#base #ball-output .output-position-1 {
+    font-size: 80%;
+    margin-left: -0.65em;
+    z-index: 3;
+}
+
+div#base #ball-output .output-position-2 {
+    font-size: 60%;
+    margin-left: -.8em;
+    z-index: 2;
+}
+
+div#base #ball-output .output-position-3 {
+    font-size: 40%;
+    margin-left: -1em;
+    z-index: 1;
+}
+
+div#base #ball-output .output-position-4 {
+    font-size: 0%;
+    margin-left: -1em;
+    z-index: 0;
 }
 
 
@@ -111,6 +165,11 @@ div#base #controls {
     float: right;
     height: 100%;
     width: 30%;
+    min-width: 30%;
+    z-index: 20;
+    background-color: inherit;
+    position: absolute;
+    right: 0;
 }
 
 div#base #controls a {
@@ -151,7 +210,8 @@ div#base #controls #new-game {
     text-align: center;
     display: inline-block;
     width: 2em;
-    background: linear-gradient(to bottom, #FFFFFF 5%, #ddddf5 80%, #378de5 150%);
+    /*background: linear-gradient(to bottom, #FFFFFF 5%, #ddddf5 80%, #378de5 150%);*/
+    background: radial-gradient(circle at 50% 25%, #FFFFFF, #cecece);
     box-shadow: 0 0.1vmin 0.2vmin 0.0vmin #3F689B;
     margin: 0.1vmin 0.2vmin 0.3vmin;
 }
